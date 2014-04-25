@@ -14,7 +14,7 @@ It adds multi-select functionality to items on the grid.
       info="Gijon, Spain" 
       price="650" 
       currency="$" 
-      exported="true">
+      soldout="true">
     </gmselect-element>
 
 @element gmselect-element
@@ -22,7 +22,7 @@ It adds multi-select functionality to items on the grid.
 @status alpha
 @url rvinay88.github.io/gmselect-element
 -->
-<polymer-element name="gmselect-element" attributes="uniqueid selected exported image designer product info price currency">
+<polymer-element name="gmselect-element" attributes="uniqueid selected soldout image designer product info price currency">
 
   <template>
 
@@ -33,8 +33,8 @@ It adds multi-select functionality to items on the grid.
         <label for="{{uniqueid}}" on-tap="{{toggle}}" />
           <input type="checkbox" id="{{uniqueid}}" class="select" checked="{{checker}}">
           <img src="{{image}}" alt="" class="prod-img">
-          <template bind if="{{ exported }}">
-            <div class="exported"></div>
+          <template bind if="{{ soldout }}">
+            <div class="soldout"></div>
           </template>
           <div class="grid-details">
             <span>{{designer}}</span>
@@ -66,13 +66,13 @@ It adds multi-select functionality to items on the grid.
        */
       selected: false,
       /**
-       * The `exported` attribute is set when instantiating the element
-       * Setting it to true will append an exported bar to the image
-       * This is to visually inform the admin user that this product has already been exported
-       * @attribute exported
+       * The `soldout` attribute is set when instantiating the element
+       * Setting it to true will append an soldout bar to the image
+       * This is to visually inform the admin user that this product has already been soldout
+       * @attribute soldout
        * @type boolean
        */
-      exported: false,
+      soldout: false,
       /**
        * The path of the `image` to be displayed for the grid item
        * 

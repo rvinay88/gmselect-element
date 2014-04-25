@@ -48,7 +48,7 @@
   white-space: nowrap;
 }
 
-.exported {
+.soldout {
   position: absolute;
   top: 40%;
   display: block;
@@ -56,9 +56,9 @@
   height: 40px;
   background: rgba(102, 102, 102, 0.95);
 }
-.exported:after {
+.soldout:after {
   text-align: center;
-  content: "Exported";
+  content: "Sold out";
   display: inline-block;
   font-family: helvetica;
   padding-top: 10px;
