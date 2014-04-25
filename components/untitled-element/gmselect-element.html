@@ -1,0 +1,139 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`gmselect-element` creates a grid with given image and details. 
+It adds multi-select functionality to items on the grid. 
+
+##### Example
+
+    <gmselect-element 
+      uniqueid="one" 
+      image="http://i.imgur.com/0huO3J5.jpg" 
+      designer="CUCARELIQUIA" 
+      product="Castellano Suede Bag Red" 
+      info="Gijon, Spain" 
+      price="650" 
+      currency="$" 
+      exported="true">
+    </gmselect-element>
+
+@element gmselect-element
+@blurb Select multiple items from a grid
+@status alpha
+@url rvinay88.github.io/gmselect-element
+-->
+<polymer-element name="gmselect-element" attributes="uniqueid selected exported image designer product info price currency">
+
+  <template>
+
+    <link href="gmselect-element.css" rel="stylesheet" />
+      
+      <content></content>
+      <section class="grid" id="grid">
+        <label for="{{uniqueid}}" on-tap="{{toggle}}" />
+          <input type="checkbox" id="{{uniqueid}}" class="select" checked="{{checker}}">
+          <img src="{{image}}" alt="" class="prod-img">
+          <template bind if="{{ exported }}">
+            <div class="exported"></div>
+          </template>
+          <div class="grid-details">
+            <span>{{designer}}</span>
+            <span>{{product}}</span>
+            <span>{{currency}} {{price}}</span>
+            <span>Shipped from {{info}}</span>
+          </div>
+         </label>
+      </section>    
+    
+
+  </template>
+
+  <script>
+
+    Polymer({
+      /**
+       * Give each grid item a unique ID. This is used to map the checkbox to its grid element.
+       * 
+       * @attribute uniqueid
+       * @type string
+       */
+      uniqueid: "lorem",
+      /**
+       * The `selected` attribute is dynamically set to true or false based on user selection
+       * 
+       * @attribute selected
+       * @type boolean
+       */
+      selected: false,
+      /**
+       * The `exported` attribute is set when instantiating the element
+       * Setting it to true will append an exported bar to the image
+       * This is to visually inform the admin user that this product has already been exported
+       * @attribute exported
+       * @type boolean
+       */
+      exported: false,
+      /**
+       * The path of the `image` to be displayed for the grid item
+       * 
+       * @attribute image
+       * @type string - url
+       */
+      image: "http://placehold.it/320x480",
+      /**
+       * The `title` for the grid item
+       * 
+       * @attribute title
+       * @type string
+       */
+      title: "Lorem Ipsum",
+      /**
+       * The `sub-title` for the grid item
+       * 
+       * @attribute subtitle
+       * @type string
+       */
+      subtitle: "Lorem Ipsum",
+      /**
+       * The `info` for additional information on the grid item
+       * Shipped from is hard-coded
+       * @attribute info
+       * @type string
+       */
+      info: "Lorem Ipsum",
+      /**
+       * `price` of the grid element
+       * 
+       * @attribute price
+       * @type number
+       */
+      price: "650",
+      /**
+       * `currency` of the grid element
+       * Makes it easy to change the display currency based on user settings of your app
+       * @attribute currency
+       * @type string
+       */
+      currency: "$",
+
+      ready: function() {
+      },
+
+      /**
+       * The `toggle` helps set the value of `selected` attribute.
+       * It also adds a selected class to visually separate selected elements from other elements
+       * It is run every time a grid element is tapped/clicked
+       * @method toggle
+       * @return {Object} Returns undefined.
+       * @param {String} dummy Serves no purpose today.
+       */
+      toggle: function() {
+        this.$.grid.classList.toggle("selected");
+        this.setAttribute("selected", this.checker);
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

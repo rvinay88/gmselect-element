@@ -1,0 +1,18 @@
+{
+  "name": "untitled-element",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "homepage": "https://github.com/rvinay88/gmselect-element",
+  "_release": "0de4798380",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "0de4798380ccb2e109418e12ea927dbad2861926"
+  },
+  "_source": "git://github.com/rvinay88/gmselect-element.git",
+  "_target": "master",
+  "_originalSource": "rvinay88/gmselect-element",
+  "_direct": true
+}
