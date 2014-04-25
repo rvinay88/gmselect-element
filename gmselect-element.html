@@ -52,6 +52,13 @@ It adds multi-select functionality to items on the grid.
 
     Polymer({
       /**
+       * Give each grid item a unique ID. This is used to map the checkbox to its grid element.
+       * 
+       * @attribute uniqueid
+       * @type string
+       */
+      uniqueid: "lorem",
+      /**
        * The `selected` attribute is dynamically set to true or false based on user selection
        * 
        * @attribute selected
