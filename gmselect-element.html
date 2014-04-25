@@ -1,0 +1,85 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Element providing solution to no problem in particular.
+
+##### Example
+
+    <gmselect-element></gmselect-element>
+
+@element gmselect-element
+@blurb Element providing solution to no problem in particular.
+@status alpha
+@url github.io
+-->
+<polymer-element name="gmselect-element" attributes="uniqueid selected exported image designer product info price currency">
+
+  <template>
+
+    <link href="gmselect-element.css" rel="stylesheet" />
+      
+      <content></content>
+      <section class="grid" id="grid">
+        <label for="{{uniqueid}}" on-tap="{{toggle}}" />
+          <input type="checkbox" id="{{uniqueid}}" class="select" checked="{{checker}}">
+          <img src="{{image}}" alt="" class="prod-img">
+<!--           <template bind if="{{ exported }}">
+            <div class="exported"></div>
+          </template> -->
+          <div class="grid-details">
+            <span>{{designer}}</span>
+            <span>{{product}}</span>
+            <span>{{currency}} {{price}}</span>
+            <span>Shipped from {{info}}</span>
+          </div>
+         </label>
+      </section>    
+    
+
+  </template>
+
+  <script>
+
+    Polymer({
+      /**
+       * The `noevent` event is not actually fired from here,
+       * we document it as an example of documenting events.
+       * 
+       * @event noevent
+       */
+
+      /**
+       * The `notitle` attribute does not yet have a purpose.
+       * 
+       * @attribute notitle
+       * @type string
+       */
+      selected: "false",
+      exported: "false",
+      image: "http://placehold.it/320x480",
+      title: "Lorem Ipsum",
+      subtitle: "Lorem Ipsum",
+      info: "Lorem Ipsum",
+      price: "650",
+      currency: "$",
+
+      ready: function() {
+      },
+
+      /**
+       * The `task` method does no work at this time.
+       * 
+       * @method task
+       * @return {Object} Returns undefined.
+       * @param {String} dummy Serves no purpose today.
+       */
+      toggle: function() {
+        this.$.grid.classList.toggle("selected");
+        this.setAttribute("selected", this.checker);
+      }
+
+    });
+
+  </script>
+
+</polymer-element>
