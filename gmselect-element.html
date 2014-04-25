@@ -8,9 +8,9 @@ Element providing solution to no problem in particular.
     <gmselect-element></gmselect-element>
 
 @element gmselect-element
-@blurb Element providing solution to no problem in particular.
+@blurb Select multiple items from a grid
 @status alpha
-@url github.io
+@url rvinay88.github.io/gmselect-element
 -->
 <polymer-element name="gmselect-element" attributes="uniqueid selected exported image designer product info price currency">
 
@@ -23,9 +23,9 @@ Element providing solution to no problem in particular.
         <label for="{{uniqueid}}" on-tap="{{toggle}}" />
           <input type="checkbox" id="{{uniqueid}}" class="select" checked="{{checker}}">
           <img src="{{image}}" alt="" class="prod-img">
-<!--           <template bind if="{{ exported }}">
+          <template bind if="{{ exported }}">
             <div class="exported"></div>
-          </template> -->
+          </template>
           <div class="grid-details">
             <span>{{designer}}</span>
             <span>{{product}}</span>
@@ -54,8 +54,8 @@ Element providing solution to no problem in particular.
        * @attribute notitle
        * @type string
        */
-      selected: "false",
-      exported: "false",
+      selected: false,
+      exported: false,
       image: "http://placehold.it/320x480",
       title: "Lorem Ipsum",
       subtitle: "Lorem Ipsum",
