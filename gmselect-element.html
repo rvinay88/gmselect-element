@@ -117,6 +117,10 @@ It adds multi-select functionality to items on the grid.
       currency: "$",
 
       ready: function() {
+        if(this.selected) {
+          this.checker = true;
+          this.toggle();
+        }
       },
 
       /**
