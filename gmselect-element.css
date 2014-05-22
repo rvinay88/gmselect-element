@@ -1,37 +1,28 @@
-﻿:host {
-  display: inline-block;
-}
-
 .grid {
   position: relative;
   background: #eee;
   display: inline-block;
   text-align: center;
-  padding: 10px;
+  padding: 10px 0;
   margin-right: 14px;
   margin-bottom: 14px;
   max-width: 200px;
   -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.8);
   -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.8);
-  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.8);
-}
-.grid > * {
-  cursor: pointer;
-}
-.grid img {
-  padding-bottom: 10px;
-  width: 185px;
-  background: #fff;
-}
-.grid input[type="checkbox"] {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.8); }
+  .grid > * {
+    cursor: pointer; }
+  .grid img {
+    padding-bottom: 10px;
+    width: 180px;
+    background: #fff; }
+  .grid input[type="checkbox"] {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
 
 .selected {
-  background: #bbb;
-}
+  background: #bbb; }
 
 .grid-details > span {
   display: block;
@@ -41,27 +32,28 @@
   font-size: 14px;
   text-align: left;
   line-height: 1.5;
-  width: 180px;
+  width: 200px;
   overflow: hidden;
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  white-space: nowrap;
-}
+  white-space: nowrap; }
+  .grid-details > span#currency, .grid-details > span#price {
+    display: inline-block;
+    width: auto;
+    float: left; }
 
 .soldout {
   position: absolute;
   top: 40%;
   display: block;
-  width: 189px;
+  width: 100%;
   height: 40px;
-  background: rgba(102, 102, 102, 0.95);
-}
-.soldout:after {
-  text-align: center;
-  content: "Sold out";
-  display: inline-block;
-  font-family: helvetica;
-  padding-top: 10px;
-  font-size: 14px;
-  color: #ddd;
-}
+  background: rgba(102, 102, 102, 0.95); }
+  .soldout:after {
+    text-align: center;
+    content: "Sold out";
+    display: inline-block;
+    font-family: helvetica;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #ddd; }

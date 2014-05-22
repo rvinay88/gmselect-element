@@ -39,7 +39,7 @@ It adds multi-select functionality to items on the grid.
           <div class="grid-details">
             <span>{{designer}}</span>
             <span>{{product}}</span>
-            <span>{{currency}} {{price}}</span>
+            <span id="currency">{{currency}}</span> <span id="price"> {{price}} </span>
             <span>Shipped from {{info}}</span>
           </div>
          </label>
@@ -109,6 +109,13 @@ It adds multi-select functionality to items on the grid.
        */
       price: "650",
       /**
+       * `usdprice` is the actual price of the item in US dollars. Used for conversions when changing currency
+       * 
+       * @attribute price
+       * @type number
+       */
+      usdprice: 650,
+      /**
        * `currency` of the grid element
        * Makes it easy to change the display currency based on user settings of your app
        * @attribute currency
@@ -117,6 +124,7 @@ It adds multi-select functionality to items on the grid.
       currency: "$",
 
       ready: function() {
+
         if(this.selected) {
           this.checker = true;
           this.toggle();
@@ -134,7 +142,8 @@ It adds multi-select functionality to items on the grid.
       toggle: function() {
         this.$.grid.classList.toggle("selected");
         this.setAttribute("selected", this.checker);
-      }
+      },
+
 
     });
 
